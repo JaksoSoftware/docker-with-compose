@@ -8,6 +8,8 @@
 
 [Docker image](https://hub.docker.com/_/docker/) with [Docker Compose](https://github.com/docker/compose) installed for CI.
 
+Fork of https://github.com/tiangolo/docker-with-compose, upgraded to run docker-compose using Python 3.
+
 ## Description
 
 The main purpose of this image is to help in Continuous Integration environments that need the `docker` binary, the `docker-compose` binary and posibly require doing other things, like running Bash scripts.
@@ -95,14 +97,6 @@ ci:
 And it would run faster as it doesn't have to install Docker Compose every time.
 
 The same would apply for Travis, Jenkins or whichever CI system you use.
-
-## Release Notes
-
-## Next Release
-
-* Add Travis CI. PR [#4](https://github.com/tiangolo/docker-with-compose/pull/4).
-
-* Upgrade Docker Compose installation. PR [#3](https://github.com/tiangolo/docker-with-compose/pull/3) by [@boskiv](https://github.com/boskiv).
 
 ## License
 
