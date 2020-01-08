@@ -1,8 +1,6 @@
-[![Build Status](https://travis-ci.org/tiangolo/docker-with-compose.svg?branch=master)](https://travis-ci.org/tiangolo/docker-with-compose)
-
 ## Supported tags and respective `Dockerfile` links
 
-* [`latest` _(Dockerfile)_](https://github.com/tiangolo/docker-with-compose/blob/master/Dockerfile)
+* [`latest` _(Dockerfile)_](https://github.com/JaksoSoftware/docker-with-compose/blob/master/Dockerfile)
 
 # Docker with Docker Compose image
 
@@ -18,14 +16,14 @@ It includes both programs and allows to run arbitrary bash scripts (contrary to 
 
 By not having to install `docker-compose` on top of a `docker:latest` image it can reduce the building time about 10 / 15 seconds in a cloud data center for each build. In environments in where the Internet connection is less good than a cloud provider, the time saved would be more.
 
-**GitHub repo**: <https://github.com/tiangolo/docker-with-compose>
+**GitHub repo**: <https://github.com/JaksoSoftware/docker-with-compose>
 
-**Docker Hub image**: <https://hub.docker.com/r/tiangolo/docker-with-compose/>
+**Docker Hub image**: <https://hub.docker.com/r/ollisal/docker-with-compose/>
 
 ## Usage
 
 ```bash
-docker pull tiangolo/docker-with-compose
+docker pull ollisal/docker-with-compose
 ```
 
 ## Problem description
@@ -49,8 +47,8 @@ For example, a very simple GitLab CI file `.gitlab-ci.yml` could look like:
 image: docker:latest
 
 before_script:
-  - apk add --no-cache py-pip
-  - pip install docker-compose
+  - apk add --no-cache py3-pip
+  - pip3 install docker-compose
   - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
 
 ci:
@@ -67,8 +65,8 @@ But when the base image has to download and install Docker Compose every time, t
 ```yml
 ...
 
-  - apk add --no-cache py-pip
-  - pip install docker-compose
+  - apk add --no-cache py3-pip
+  - pip3 install docker-compose
 
 ...
 ```
@@ -80,7 +78,7 @@ This image includes Docker Compose and allows you to run any other arbitrary com
 So your GitLab CI `.gitlab-ci.yml` file could then look like:
 
 ```yml
-image: tiangolo/docker-with-compose
+image: ollisal/docker-with-compose
 
 before_script:
   - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY

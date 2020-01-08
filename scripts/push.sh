@@ -3,4 +3,4 @@ set -e
 
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
-docker push tiangolo/docker-with-compose
+docker push ollisal/docker-with-compose

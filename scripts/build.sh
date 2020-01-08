@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -e
 
-docker build -t tiangolo/docker-with-compose .
+docker build -t ollisal/docker-with-compose .
